@@ -1,9 +1,15 @@
 import pyautogui as pg
 import time
 
+sayi=0
+
 def open_wo_login():
     pg.click(334, 1058)
     time.sleep(2)
+
+def close_window():
+    pg.press('esc')
+    time.sleep(3)
 
 def refresh():
     pg.click(127, 74)  # refresh
@@ -17,7 +23,10 @@ def follower_list():
     time.sleep(5)
 
 def follow_all():
-    for j in range(0, 100, 4):
+
+    follower = 40
+
+    for j in range(0, follower*4, 4):
         if j == 32:
             for m in range(71):
                 pg.press('tab')
@@ -31,14 +40,13 @@ def follow_all():
             pg.press('enter')
             time.sleep(5)
 
+
 def main():
     open_wo_login()
     refresh()
     follower_list() #takipçi listesi
     follow_all()
-
-    pg.click(860, 238) #close
-    time.sleep(3)
+    close_window()
 
 main()
 
