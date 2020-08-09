@@ -1,6 +1,7 @@
 import pyautogui as pg
 import time
 from tkinter import *
+import subprocess
 
 def follow_list():
     time.sleep(10)
@@ -16,11 +17,7 @@ def close():
         pg.hotkey('alt', 'f4')
 
 def open_browser():
-    time.sleep(2)
-    pg.press('win')
-    pg.typewrite('chrome.exe')
-    time.sleep(2)
-    pg.press('enter')
+    subprocess.Popen('C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')
     time.sleep(2)
 
 def follow_all(sayi, sayac):
@@ -46,7 +43,7 @@ def follow_all(sayi, sayac):
     return sayi
 
 def butonKomutlari():
-
+    time.sleep(3)
     Liste =[giris2, giriss2, girisss2]
     follower = giris1.get()
 
@@ -67,8 +64,8 @@ def butonKomutlari():
         close()
 
 p = Tk()
-p.wm_iconbitmap('follow.ico')
-p.wm_title('Title')
+#p.wm_iconbitmap('follow.ico')
+#p.wm_title('Title')
 p.title("Follows the Followers of an Instagram Account 4.1")
 p.geometry("800x200")
 
